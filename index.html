@@ -1,130 +1,116 @@
 <!DOCTYPE html>
 
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Fleet.pm - Fleet Perl Mongers</title>
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/open-layers/ol.css" rel="stylesheet">
-    <style>
-        body {
-            padding: 40px 0;
-        }
+<title>Fleet.pm - Fleet Perl Mongers</title>
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/open-layers/ol.css" rel="stylesheet">
+<style>
+    body {
+        padding: 40px 0;
+    }
 
-        .jumbotron {
-            background: url(hero.png) center/cover;
-            color: #fff;
-            padding: 40px;
-        }
+    .jumbotron {
+        background: url(hero.png) center/cover;
+        color: #fff;
+        padding: 40px;
+    }
 
-        #map {
-            width: 100%;
-        }
-    </style>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/open-layers/ol.js"></script>
-    <script>
-        $(function(){
-            // Make the map square.
-            var div = $('#map');
-            div.height(div.width());
+    #map {
+        width: 100%;
+    }
+</style>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/open-layers/ol.js"></script>
+<script>
+    $(function(){
+        // Make the map square.
+        var div = $('#map');
+        div.height(div.width());
 
-            new ol.Map({
-                target: 'map',
-                layers: [new ol.layer.Tile({ source: new ol.source.OSM() })],
-                view: new ol.View({
-                    center: ol.proj.transform(
-                        [-0.833, 51.2902], 'EPSG:4326', 'EPSG:3857'),
-                    zoom: 17
-                })
-            });
+        new ol.Map({
+            target: 'map',
+            layers: [new ol.layer.Tile({ source: new ol.source.OSM() })],
+            view: new ol.View({
+                center: ol.proj.transform(
+                    [-0.833, 51.2902], 'EPSG:4326', 'EPSG:3857'),
+                zoom: 17
+            })
         });
-    </script>
-</head>
-<body>
-    <div class="container">
-        <header class="jumbotron">
-            <h1>Do <em>you</em> (ab)use Perl?</h1>
-            <p>
-                The Fleet Perl Mongers meet to discuss Perl on the second
-                Wednesday of the month.
-            </p>
-            <pre>perl -e'$_=q/$#%$#%##$%&#$%&&$&$%$%$$#%##$&##$%$$$&#%$%&##%&%##%%/;s#.#chr ord($&)-35#eg;s#....#$c="";$c.=substr unpack("B8",substr$&,$_,1),6,2 for 0..3;pack"B8",$c#eg;print'</pre>
-        </header>
-        <section id="join">
-            <div class="page-header">
-                <h1>Fleet.pm <small>Fleet Perl Mongers</small></h1>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <h2>About Us</h2>
-                    <p>
-                        Fleet.pm is a local community of Perl users, under the
-                        international Perl Mongers umbrella.
-                    </p>
-                    <ul>
-                        <li>
-                            <a href="http://www.pm.org">Perl Mongers</a>
-                        </li>
-                    </ul>
-                    <h2>About Perl</h2>
-                    <p>
-                        Perl 5 is a highly capable, feature-rich programming
-                        language with over 26 years of development.
-                    </p>
-                    <ul>
-                        <li>
-                            <a href="http://www.perl.org">www.perl.org</a>
-                        </li>
-                        <li>
-                            <a href="http://www.perlfoundation.org">
-                                The Perl Foundation
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h2>Meetings</h2>
-                    <p>
-                        We meet on the second Wednesday of each month, at 6pm
-                        in <a href="http://pizzakitchenbars.co.uk/location/the-station">The Station</a>.
-                    </p>
-                    <p>The next three meetings will be:</p>
-                    <ul>
-                        <li>Wednesday, 10<sup>th</sup> June 2015</li>
+    });
+</script>
 
-                        <li>Wednesday, 8<sup>th</sup> July 2015</li>
-
-                        <li>Wednesday, 12<sup>th</sup> August 2015</li>
-                    </ul>
-                    <p>
-                        (Contact the mailing list if this list seems out of
-                        date.)
-                    </p>
-                    <h2>Contact</h2>
-                    <p>
-                        The Fleet-pm mailing list is low traffic, and will
-                        have announcements of future meetings.
-                    </p>
-                    <ul>
-                        <li>
-                            <a href="http://mail.pm.org/mailman/listinfo/fleet-pm">
-                                Subscribe/Unsubscribe
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://mail.pm.org/pipermail/fleet-pm">
-                                List Archives
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <div id="map"></div>
-                </div>
+<div class="container">
+    <header class="jumbotron">
+        <h1>Do <em>you</em> (ab)use Perl?</h1>
+        <p>
+            The Fleet Perl Mongers meet to discuss Perl on the second
+            Wednesday of the month.
+        </p>
+        <pre>perl -e'$_=q/$#%$#%##$%&amp;#$%&amp;&amp;$&amp;$%$%$$#%##$&amp;##$%$$$&amp;#%$%&amp;##%&amp;%##%%/;s#.#chr ord($&amp;)-35#eg;s#....#$c="";$c.=substr unpack("B8",substr$&amp;,$_,1),6,2 for 0..3;pack"B8",$c#eg;print'</pre>
+    </header>
+    <section id="join">
+        <div class="page-header">
+            <h2>Fleet.pm <small>Fleet Perl Mongers</small></h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <h3>About Us</h3>
+                <p>
+                    Fleet.pm is a local community of Perl users, under the
+                    international Perl Mongers umbrella.
+                </p>
+                <ul>
+                    <li><a href="http://www.pm.org">Perl Mongers</a>
+                </ul>
+                <h3>About Perl</h3>
+                <p>
+                    Perl 5 is a highly capable, feature-rich programming
+                    language with over 26 years of development.
+                </p>
+                <ul>
+                    <li>
+                        <a href="http://www.perl.org">www.perl.org</a>
+                    <li>
+                        <a href="http://www.perlfoundation.org">
+                            The Perl Foundation
+                        </a>
+                </ul>
             </div>
-        </section>
-    </div>
-</body>
-</html>
+            <div class="col-lg-4">
+                <h3>Meetings</h3>
+                <p>
+                    We meet on the second Wednesday of each month, at 6pm
+                    in <a href="http://pizzakitchenbars.co.uk/location/the-station">The Station</a>.
+                </p>
+                <p>The next three meetings will be:</p>
+                <ul>
+                    <li>Wednesday, 10<sup>th</sup> June 2015
+                    <li>Wednesday, 8<sup>th</sup> July 2015
+                    <li>Wednesday, 12<sup>th</sup> August 2015
+                </ul>
+                <p>
+                    (Contact the mailing list if this list seems out of
+                    date.)
+                </p>
+                <h3>Contact</h3>
+                <p>
+                    The Fleet-pm mailing list is low traffic, and will
+                    have announcements of future meetings.
+                </p>
+                <ul>
+                    <li>
+                        <a href="http://mail.pm.org/mailman/listinfo/fleet-pm">
+                            Subscribe/Unsubscribe
+                        </a>
+                    <li>
+                        <a href="http://mail.pm.org/pipermail/fleet-pm">
+                            List Archives
+                        </a>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <div id="map"></div>
+            </div>
+        </div>
+    </section>
+</div>
