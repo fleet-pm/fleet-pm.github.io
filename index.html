@@ -39,6 +39,40 @@
     });
 </script>
 
+<script>
+    function getSecondWednesday(today) {
+        var d = new Date(today);      
+        d.setDate(1);
+        
+        while (d.getDay() !== 3) {
+            d.setDate(d.getDate() + 1);
+        }
+
+        d.setDate(d.getDate() + 7);
+
+        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        return(d.toLocaleDateString('en-GB',options));
+    }
+
+    function getDates() {
+        var dates = [ ];
+        var d = new Date();
+        dates[0] = getSecondWednesday(d);
+        dates[1] = getSecondWednesday( d.setMonth(d.getMonth()+1) );
+        dates[2] = getSecondWednesday( d.setMonth(d.getMonth()+1) );
+        
+        return dates;
+    }
+
+    $(document).ready(function() {
+        var dates = getDates();
+
+        dates.forEach(element => {
+            $("#listDates").append('<li>' + element);
+        });
+    });
+</script>
+
 <div class="container">
     <header class="jumbotron">
         <h1>Do <em>you</em> (ab)use Perl?</h1>
@@ -83,10 +117,8 @@
                     in <a href=//www.emberinns.co.uk/nationalsearch/southeast/the-station-fleet>The Station</a>.
                 </p>
                 <p>The next three meetings will be:</p>
-                <ul>
-                    <li>Wednesday, 10<sup>th</sup> February 2016
-                    <li>Wednesday, 9<sup>th</sup> March 2016
-                    <li>Wednesday, 13<sup>th</sup> April 2016
+                <ul id="listDates">
+                   
                 </ul>
                 <p>
                     (Contact the mailing list if this list seems out of
